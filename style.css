@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f5fa;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+/* ================= HEADER & NAVBAR ================= */
+.navbar-wrapper {
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left .logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #6b7280;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #111827;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.user-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.user-avatar-icon {
+    font-size: 13px;
+}
+
+.btn-logout {
+    background: #f43f5e;
+    color: #ffffff;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-logout:hover {
+    background: #e11d48;
+}
+
+.btn-logout:active {
+    transform: scale(0.95);
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-container {
+    max-width: 1080px;
+    margin: 30px auto 40px;
+    padding: 0 20px;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: 460px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* Cards Base */
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #edf0f5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    padding: 24px;
+}
+
+/* ================= LEFT SECTION ================= */
+.left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Added Items Card */
+.added-items-card {
+    padding: 22px 24px 20px;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.items-table-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f3f8;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #9ca3af;
+}
+
+.col-sno {
+    width: 40px;
+}
+
+.col-name {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.col-price {
+    width: 90px;
+    text-align: right;
+}
+
+/* Empty Items View */
+.empty-items-view {
+    text-align: center;
+    padding: 30px 15px 25px;
+}
+
+.info-circle-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f3f4f8;
+    color: #6b7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 18px;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.empty-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.empty-subtitle {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Populated Items List */
+.items-list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 0 16px;
+    border-bottom: 1px solid #f1f3f8;
+}
+
+.item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13.5px;
+    color: #374151;
+}
+
+.item-sno {
+    width: 40px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.item-name-text {
+    flex: 1;
+    padding-left: 10px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.item-price-text {
+    width: 90px;
+    text-align: right;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Total Amount Row */
+.total-amount-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+}
+
+.total-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.total-price {
+    font-size: 16px;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* Book Now Card */
+.book-now-card {
+    padding: 22px 24px;
+}
+
+.form-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9ca3af;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: #1f2937;
+    background: #ffffff;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input::placeholder {
+    color: #cbd5e1;
+}
+
+.form-field input:focus {
+    border-color: #939bf4;
+    box-shadow: 0 0 0 3px rgba(147, 155, 244, 0.15);
+}
+
+.form-row-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btn-book-now {
+    width: 100%;
+    padding: 12px;
+    background: #939bf4;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-book-now:hover {
+    background: #7e87f2;
+}
+
+.btn-book-now:active {
+    transform: scale(0.99);
+}
+
+.booking-success-msg {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    line-height: 1.4;
+    animation: fadeIn 0.3s ease;
+}
+
+.check-icon {
+    font-weight: bold;
+    color: #10b981;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= RIGHT SECTION ================= */
+.right-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.browse-services-card {
+    padding: 28px 28px 22px;
+}
+
+.browse-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.browse-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+/* Service Showcase Box */
+.service-showcase {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-image-container {
+    width: 100%;
+    height: 270px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fbfbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border: 1px solid #f1f3f8;
+}
+
+.service-svg-art {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-details-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.service-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.service-price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #6366f1;
+}
+
+/* Action Buttons: Skip Item & Add Item */
+.service-action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.btn-skip-item {
+    background: #ffffff;
+    border: 1.5px solid #fecdd3;
+    color: #f43f5e;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-skip-item:hover {
+    background: #fff1f2;
+    border-color: #fda4af;
+}
+
+.btn-add-item {
+    background: #f0fdf4;
+    border: 1.5px solid #bbf7d0;
+    color: #16a34a;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add-item:hover {
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+/* Bottom Hint */
+.bottom-cart-hint {
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f3f8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.hint-icon {
+    font-size: 16px;
+    color: #6366f1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .app-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+}

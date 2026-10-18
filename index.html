@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Booking Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation Bar -->
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <div class="nav-left">
+                <span class="logo">Logo</span>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <div class="user-pill">
+                    <span class="user-avatar-icon">👤</span>
+                    <span class="user-name" id="displayUsername">Username</span>
+                </div>
+                <button type="button" class="btn-logout" id="logoutBtn" title="Logout">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                        <line x1="12" y1="2" x2="12" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <div class="app-grid">
+
+            <!-- ================= LEFT SECTION ================= -->
+            <section class="left-col">
+                <!-- Top Card: Added Items -->
+                <div class="card added-items-card">
+                    <h3 class="card-title">Added Items</h3>
+
+                    <!-- Table Header -->
+                    <div class="items-table-header">
+                        <span class="col-sno">S.No</span>
+                        <span class="col-name">Service Name</span>
+                        <span class="col-price">Price</span>
+                    </div>
+
+                    <!-- Empty State Display -->
+                    <div class="empty-items-view" id="emptyItemsView">
+                        <div class="info-circle-icon">
+                            <span>i</span>
+                        </div>
+                        <h4 class="empty-title">No Items Added</h4>
+                        <p class="empty-subtitle">Add items to the cart from the services bar</p>
+                    </div>
+
+                    <!-- Dynamic List of Added Items -->
+                    <div class="items-list-view" id="itemsListView" style="display: none;">
+                        <!-- Dynamically populated rows -->
+                    </div>
+
+                    <!-- Total Amount Row -->
+                    <div class="total-amount-row">
+                        <span class="total-label">Total Amount</span>
+                        <span class="total-price" id="totalAmount">₹ 0</span>
+                    </div>
+                </div>
+
+                <!-- Bottom Card: Book Now Form -->
+                <div class="card book-now-card">
+                    <h3 class="form-title">Book Now</h3>
+
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-field">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" placeholder="John Doe" required autocomplete="name">
+                        </div>
+
+                        <div class="form-row-two-col">
+                            <div class="form-field">
+                                <label for="emailId">Email ID</label>
+                                <input type="email" id="emailId" placeholder="name@gmail.com" required autocomplete="email">
+                            </div>
+                            <div class="form-field">
+                                <label for="phoneNum">Phone Number</label>
+                                <input type="tel" id="phoneNum" placeholder="9000000000" required autocomplete="tel">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-book-now" id="bookNowBtn">Book now</button>
+
+                        <!-- Success Message Banner -->
+                        <div class="booking-success-msg" id="successMsg" style="display: none;">
+                            <span class="check-icon">✓</span>
+                            <span>Thank you for contacting, we will get back to you soon</span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ================= RIGHT SECTION ================= -->
+            <section class="right-col">
+                <div class="card browse-services-card">
+                    <div class="browse-header">
+                        <h2>Browse Our Services</h2>
+                        <p class="browse-subtitle">Click on the add to cart button to add the services to your cart or press skip</p>
+                    </div>
+
+                    <!-- Active Service Showcase -->
+                    <div class="service-showcase" id="serviceShowcase">
+                        <!-- Image Container -->
+                        <div class="service-image-container" id="serviceImageContainer">
+                            <!-- Injected dynamically by script.js -->
+                        </div>
+
+                        <!-- Service Title and Price Row -->
+                        <div class="service-details-row">
+                            <h3 class="service-name" id="serviceName">Dry Cleaning</h3>
+                            <span class="service-price" id="servicePrice">₹200.00</span>
+                        </div>
+
+                        <!-- Action Buttons: Skip Item & Add Item -->
+                        <div class="service-action-buttons">
+                            <button type="button" class="btn-skip-item" id="skipItemBtn">
+                                <span>Skip Item</span>
+                            </button>
+                            <button type="button" class="btn-add-item" id="addItemBtn">
+                                <span>Add Item</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Notice -->
+                    <div class="bottom-cart-hint">
+                        <span class="hint-icon">⊕</span>
+                        <span class="hint-text">Add the items to the cart and book now</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
